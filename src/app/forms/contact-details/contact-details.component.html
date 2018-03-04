@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <div class="col-9 col-sm-9 col-sm-offset-0 col-md-offset-0">
+          <h3>N.O.K Contact Details</h3>
+          <hr>
+        </div>
+    </div>
+    <div class="row col-12">
+      <button class="btn btn-info pull-right" (click)="onAddContact()">Add</button>
+    </div>
+    <form [formGroup]="contactForm">
+    <div formGroupName="contacts">
+    <div class="row col-12">
+        
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                    <th scope="col" width="7%">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Relationship</th>
+                    <th scope="col">Telephone</th>
+                    <th scope="col">Cell</th>
+                    <th scope="col">Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let contact of contactForm.get('contacts').controls; let i = index;" formGroupName="{{i}}">
+                  
+                  <td>
+                      <input type="text" class="form-control" formControlName="id" readonly>
+                  </td>
+                  <td>
+                    <input type="text" class="form-control" formControlName="name">
+                  </td>
+                  <td>
+                    <input type="text" class="form-control" formControlName="rel">
+                  </td>
+                  <td>
+                    <input type="text" class="form-control" formControlName="tel">
+                  </td>
+                  <td>
+                    <input type="text" class="form-control" formControlName="cell">
+                  </td>
+                  <td>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                          Action <span class="caret"></span>
+                          <ul class="dropdown-menu" role="menu">
+                              <li><a href="#">Edit</a></li>
+                              <li><a href="#">Delete</a></li>
+                            </ul>
+                        </button>
+                      </div>
+                  </td>
+                
+                </tr>
+              </tbody>
+          </table>
+    </div>
+  </div>
+  </form>
+</div>

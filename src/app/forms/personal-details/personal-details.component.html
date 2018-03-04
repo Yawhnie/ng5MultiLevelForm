@@ -1,0 +1,41 @@
+    <div class="row">
+        <div class="row">
+          <h3>Personal Information</h3>
+          <hr>
+        </div>
+        <form [formGroup]="formPersonalDetails">
+        <div class="row">
+               
+          <div class="form-group col-6">
+            <label for="last-name">Last Name</label>
+            <input type="text" class="form-control" formControlName="last-name">
+          </div>
+          <div class="form-group col-6">
+              <label for="first-name">First Name</label>
+              <input type="text" class="form-control" formControlName="first-name">
+          </div>
+
+          <div class="form-group col-12">
+              <label for="address">Address</label>
+              <textarea cols="50" class="form-control" formControlName="address"></textarea>
+          </div>
+          <div class="form-group col-6">
+            <label for="tel">Telephone</label>
+            <input type="text" class="form-control" mask="(000) 000-000-000-000" formControlName="tel">
+          </div>
+          <div class="form-group col-6">
+              <label for="cell">Cell</label>
+              <input type="text" class="form-control"  specialCharacters="[ '[' ,']' , '*' ]" mask="[00]*[000]" formControlName="cell">
+          </div>
+          <div class="form-group col-6">
+            <label for="dob">Date of Birth</label>
+            <input type="text" class="form-control" formControlName="dob">
+          </div>
+          <div class="form-group col-6">
+              <label for="sin">SIN</label>
+              <input type="text" class="form-control" formControlName="sin">
+          </div>
+        
+      </div>
+      </form>
+    </div>
